@@ -1,48 +1,43 @@
-'use client'
-import Image from 'next/image'
-import './vestidos-m.css'
+// src/app/hombre/zapatos/page.jsx
+import ProductGrid from '../../components/ProductGrid/ProductGrid'
 
-export default function VestidosPage() {
+export default function VestidosMujerPage() {
   const productos = [
     {
       id: 1,
-      nombre: 'Vestido de verano floral',
-      precio: 49.99,
-      imagen: '/images/productos/hombre/vestido-1-mujer.jpeg' // Puede ser cualquier tamaño
+      nombre: 'Vestido largo de flores para el fin de semana',
+      precio: 149.950,
+      imagen: '/images/productos/mujer/vestidos/ves-1-principal.webp', // Imagen por defecto
+      imagenes: [
+        '/images/productos/mujer/vestidos/ves-1-principal.webp',
+        '/images/productos/mujer/vestidos/ves-1-frontal.webp',
+        '/images/productos/mujer/vestidos/ves-1-trasero.webp',
+      ],
+      descripcion: 'Vestido manga corta • Escote en V. • Largo. • Estampado de flores. • Elástico en cintura. • Abertura lateral en ruedo. • Perfecto para que luzcas femenina mientras estás cómoda. *Algunas pantallas pueden alterar el color real de la prenda. *La modelo usa un vestido talla S.',
+      calificacion: 5,
+      reseñas: 189,
+      tiempoDespacho: '3 - 5 semanas',
+      entrega: 'Entrega a domicilio - $10'
+    },
+
+        {
+      id: 2,
+      nombre: 'Vestido largo estampado en efecto lino',
+      precio: 199.950,
+      imagen: '/images/productos/mujer/vestidos/ves-2-principal.webp', // Imagen por defecto
+      imagenes: [
+        '/images/productos/mujer/vestidos/ves-2-principal.webp',
+        '/images/productos/mujer/vestidos/ves-2-trasero.webp',
+        '/images/productos/mujer/vestidos/ves-2-lateral.webp'
+      ],
+      descripcion: 'Vestido de tiras anudables con borlas • Escote tipo corazón. • Largo. • Estampados arabescos. • Corte en cintura. • Nido de abeja en posterior. • Tela efecto lino. • Tus días de verano estarán felices de contar con un vestido como este. *Algunas pantallas pueden alterar el color real de la prenda. *La modelo usa un vestido talla S.',
+      calificacion: 4.2,
+      reseñas: 189,
+      tiempoDespacho: '3 - 5 semanas',
+      entrega: 'Entrega a domicilio - $10'
     },
 
   ]
 
-  return (
-    <div className="vestidos-page">
-      <h1>Vestidos para Dama</h1>
-      
-      <div className="products-grid">
-        {productos.map((producto) => (
-          <div key={producto.id} className="product-card">
-            <div className="image-container">
-              <Image 
-                src={producto.imagen} 
-                alt={producto.nombre}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="product-image"
-                onError={(e) => {
-                  // Fallback si la imagen no carga
-                  e.target.src = '/images/placeholder.jpg'
-                }}
-              />
-            </div>
-            <div className="product-info">
-              <h3 className="product-name">{producto.nombre}</h3>
-              <p className="product-price">${producto.precio}</p>
-              <button className="add-to-cart-btn">
-                Agregar al Carrito
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
+  return <ProductGrid productos={productos} titulo="Vestidos para Mujer" />
 }

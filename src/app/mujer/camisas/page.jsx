@@ -1,48 +1,43 @@
-'use client'
-import Image from 'next/image'
-import './camisas-m.css'
+// src/app/hombre/zapatos/page.jsx
+import ProductGrid from '../../components/ProductGrid/ProductGrid'
 
-export default function CamisasPage() {
+export default function CamisasMujerPage() {
   const productos = [
     {
       id: 1,
-      nombre: 'Blusa casual negra',
-      precio: 49.99,
-      imagen: '/images/productos/hombre/camisa-1-mujer.jpeg' // Puede ser cualquier tamaño
+      nombre: 'Blusa Mujer con Bordado Manga larga globo University Club - "Color Negro"',
+      precio: 58.990,
+      imagen: '/images/productos/mujer/camisa/blu-1-principal.webp', // Imagen por defecto
+      imagenes: [
+        '/images/productos/mujer/camisa/blu-1-principal.webp',
+        '/images/productos/mujer/camisa/blu-1-lateral.webp',
+        '/images/productos/mujer/camisa/blu-1-trasero.webp',
+      ],
+      descripcion: 'Diseño: Bordado ,Segmento: Adulto ,Tipo de cuello: Cuello en v',
+      calificacion: 5,
+      reseñas: 189,
+      tiempoDespacho: '3 - 5 semanas',
+      entrega: 'Entrega a domicilio - $10'
+    },
+
+        {
+      id: 2,
+      nombre: 'Camiseta Mujer Tejido Manga corta de Algodón University Club - "Color Cafe"',
+      precio: 230.965,
+      imagen: '/images/productos/mujer/camisa/cam-1-principal.webp', // Imagen por defecto
+      imagenes: [
+        '/images/productos/mujer/camisa/cam-1-principal.webp',
+        '/images/productos/mujer/camisa/cam-1-frontal.webp',
+        '/images/productos/mujer/camisa/cam-1-trasero.webp'
+      ],
+      descripcion: 'Material de vestuario: Algodón, Composición: 100%ALGODON, Estilo de vestuario: Casual, Largo de mangas: Manga corta',
+      calificacion: 4.2,
+      reseñas: 189,
+      tiempoDespacho: '3 - 5 semanas',
+      entrega: 'Entrega a domicilio - $10'
     },
 
   ]
 
-  return (
-    <div className="camisa-page">
-      <h1>Blusas para Dama</h1>
-      
-      <div className="products-grid">
-        {productos.map((producto) => (
-          <div key={producto.id} className="product-card">
-            <div className="image-container">
-              <Image 
-                src={producto.imagen} 
-                alt={producto.nombre}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="product-image"
-                onError={(e) => {
-                  // Fallback si la imagen no carga
-                  e.target.src = '/images/placeholder.jpg'
-                }}
-              />
-            </div>
-            <div className="product-info">
-              <h3 className="product-name">{producto.nombre}</h3>
-              <p className="product-price">${producto.precio}</p>
-              <button className="add-to-cart-btn">
-                Agregar al Carrito
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
+  return <ProductGrid productos={productos} titulo="Camisas y Blusas para Mujer" />
 }
