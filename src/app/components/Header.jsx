@@ -5,6 +5,15 @@ import './Header.css'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState(null)
+
+  const handleMouseEnter = (category) => {
+    setActiveDropdown(category)
+  }
+
+  const handleMouseLeave = () => {
+    setActiveDropdown(null)
+  }
 
   return (
     <header className="header">
@@ -26,8 +35,20 @@ const Header = () => {
           </button>
           
           <ul className="nav-menu">
-            <li><Link href="/hombre" className="nav-link">Hombre</Link></li>
-            <li><Link href="/mujer" className="nav-link">Mujer</Link></li>
+            {/* Hombre sin dropdown */}
+            <li>
+              <Link href="/hombre" className="nav-link">
+                Hombre
+              </Link>
+            </li>
+
+            {/* Mujer sin dropdown */}
+            <li>
+              <Link href="/mujer" className="nav-link">
+                Mujer
+              </Link>
+            </li>
+
             <li><Link href="/objects" className="nav-link">Objects</Link></li>
             <li><Link href="/journal" className="nav-link">Journal</Link></li>
           </ul>

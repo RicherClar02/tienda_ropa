@@ -1,0 +1,374 @@
+.camisas-page {
+  padding: 2rem 0;
+}
+
+.camisas-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.camisas-titulo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.camisas-descripcion {
+  font-size: 1.1rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Filtros */
+.filtros-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.filtros-titulo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.filtro-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filtro-label {
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.filtro-select {
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: white;
+}
+
+.filtro-select:focus {
+  outline: none;
+  border-color: #4299e1;
+}
+
+/* Grid de productos mejorado */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.producto-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.producto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.producto-imagen {
+  height: 300px;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.imagen-placeholder {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.etiqueta-nuevo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #e53e3e;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.producto-info {
+  padding: 1.5rem;
+}
+
+.producto-nombre {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.producto-descripcion {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.producto-precio {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e53e3e;
+  margin-bottom: 1rem;
+}
+
+.producto-tallas {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.talla-option {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.talla-option:hover {
+  border-color: #4299e1;
+}
+
+.talla-option.seleccionada {
+  background: #4299e1;
+  color: white;
+  border-color: #4299e1;
+}
+
+.boton-agregar {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-agregar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.boton-agregar:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Paginación */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.boton-paginacion {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #e2e8f0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.boton-paginacion:hover:not(:disabled) {
+  border-color: #4299e1;
+  color: #4299e1;
+}
+
+.boton-paginacion:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagina-actual {
+  font-weight: 600;
+  color: #4299e1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .camisas-page {
+    padding: 1rem 0;
+  }
+  
+  .camisas-titulo {
+    font-size: 2rem;
+  }
+  
+  .filtros-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .productos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .producto-imagen {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .producto-tallas {
+    justify-content: center;
+  }
+}
+
+
+
+
+/* Contenedor principal que fuerza el tamaño */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 350px; /* Altura fija que quieras */
+  overflow: hidden;
+  background: #f8f9fa; /* Color de fondo por si la imagen no carga */
+}
+
+/* La imagen se adapta al contenedor sin importar su tamaño original */
+.product-image {
+  object-fit: cover; /* ¡IMPORTANTE: Esto hace la magia! */
+  object-position: center; /* Centra la imagen */
+  width: 100% !important;
+  height: 100% !important;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover opcional */
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* Grid de productos */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+  line-height: 1.4;
+}
+
+.product-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e53e3e;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #2d3748;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background: #4a5568;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .image-container {
+    height: 300px; /* Altura menor en móviles */
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    height: 250px;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
