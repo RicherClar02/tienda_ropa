@@ -1,74 +1,55 @@
-'use client'
-import Link from 'next/link'
-import { useState } from 'react'
-import './Header.css'
+// src/app/components/Header.jsx
+
+import Link from 'next/link';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState(null)
+    // Nota: He renombrado 'Contact us' a 'Contacto' y añadido 'Carrito'
+    return (
+        <header className="main-header" style={{ 
+            display: 'flex', 
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
+            padding: '20px 40px', 
+            backgroundColor: '#303f50', // Color de fondo similar al de tu imagen
+            color: 'white' 
+        }}>
+            
+            <div className="logo" style={{ fontSize: '1.5em', fontWeight: 'bold' }}>
+                <Link href="/" style={{ textDecoration: 'none', color: 'white' }}>
+                    PGMONK
+                </Link>
+            </div>
 
-  const handleMouseEnter = (category) => {
-    setActiveDropdown(category)
-  }
+            <nav className="nav-center" style={{ display: 'flex', gap: '40px' }}>
+                <Link href="/hombre" style={{ textDecoration: 'none', color: 'white' }}>
+                    HOMBRE
+                </Link>
+                <Link href="/mujer" style={{ textDecoration: 'none', color: 'white' }}>
+                    MUJER
+                </Link>
+                <Link href="/objects" style={{ textDecoration: 'none', color: 'white' }}>
+                    OBJECTS
+                </Link>
+                {/* 1. CAMBIO DE JOURNAL A CARRITO */}
+                <Link href="/carrito" style={{ textDecoration: 'none', color: 'white' }}> 
+                    CARRITO
+                </Link>
+            </nav>
 
-  const handleMouseLeave = () => {
-    setActiveDropdown(null)
-  }
+            <nav className="nav-right" style={{ display: 'flex', gap: '20px' }}>
+                <Link href="/login" style={{ textDecoration: 'none', color: 'white' }}>
+                    Login
+                </Link>
+                <Link href="/help" style={{ textDecoration: 'none', color: 'white' }}>
+                    Help
+                </Link>
+                <Link href="/contactus" style={{ textDecoration: 'none', color: 'white' }}>
+                    Contact us
+                </Link>
+            </nav>
+            
+        </header>
+    );
+};
 
-  return (
-    <header className="header">
-      <div className="header-container">
-        {/* Logo */}
-        <div className="logo">
-          <Link href="/">PGMONK</Link>
-        </div>
-        
-        {/* Menú de navegación */}
-        <nav className={`navigation ${isMenuOpen ? 'nav-open' : ''}`}>
-          <button 
-            className="mobile-menu-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          
-          <ul className="nav-menu">
-            {/* Hombre sin dropdown */}
-            <li>
-              <Link href="/hombre" className="nav-link">
-                Hombre
-              </Link>
-            </li>
-
-            {/* Mujer sin dropdown */}
-            <li>
-              <Link href="/mujer" className="nav-link">
-                Mujer
-              </Link>
-            </li>
-
-            <li><Link href="/objects" className="nav-link">Objects</Link></li>
-            <li><Link href="/journal" className="nav-link">Journal</Link></li>
-          </ul>
-        </nav>
-        
-        {/* Iconos de usuario */}
-        <div className="user-actions">
-          <Link href="/login" className="login-link">
-            Login
-          </Link>
-          <Link href="/help" className="help-link">
-            Help
-          </Link>
-          <Link href="/contact" className="contact-link">
-            Contact us
-          </Link>
-        </div>
-      </div>
-    </header>
-  )
-}
-
-export default Header
+export default Header;
