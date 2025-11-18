@@ -20,34 +20,7 @@ const Header = () => {
                 </Link>
             </div>
 
-            <nav className="nav-center" style={{ display: 'flex', gap: '40px' }}>
-                <Link href="/hombre" style={{ textDecoration: 'none', color: 'white' }}>
-                    HOMBRE
-                </Link>
-                <Link href="/mujer" style={{ textDecoration: 'none', color: 'white' }}>
-                    MUJER
-                </Link>
-                <Link href="/objects" style={{ textDecoration: 'none', color: 'white' }}>
-                    OBJECTS
-                </Link>
-                {/* 1. CAMBIO DE JOURNAL A CARRITO */}
-                <Link href="/carrito" style={{ textDecoration: 'none', color: 'white' }}> 
-                    CARRITO
-                </Link>
-            </nav>
-
-            <nav className="nav-right" style={{ display: 'flex', gap: '20px' }}>
-                <Link href="/login" style={{ textDecoration: 'none', color: 'white' }}>
-                    Login
-                </Link>
-                <Link href="/help" style={{ textDecoration: 'none', color: 'white' }}>
-                    Help
-                </Link>
-                <Link href="/contactus" style={{ textDecoration: 'none', color: 'white' }}>
-                    Contact us
-                </Link>
-            </nav>
-            
+              
         </header>
     );
 };

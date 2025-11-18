@@ -1,35 +1,30 @@
+'use client'
+
+import Link from 'next/link'
 import Image from 'next/image'
 import './Home.css'
 
 export default function Home() {
   return (
     <main className="home-container">
+
       <section className="hero">
-        <h1>New Essential Tees</h1>
-        <p>Diseño minimalista con la mejor calidad</p>
-        <button className="cta-button">Descubrir Colección</button>
-      </section>
+
       
-      <section className="featured-products">
-        <h2>Productos Destacados</h2>
-        <div className="products-grid">
-          <div className="product-card">
-            <div className="product-image"></div>
-            <h3>Camiseta Essential</h3>
-            <p>29,99 €</p>
-          </div>
-          <div className="product-card">
-            <div className="product-image"></div>
-            <h3>Sudadera Minimal</h3>
-            <p>59,99 €</p>
-          </div>
-          <div className="product-card">
-            <div className="product-image"></div>
-            <h3>Pantalón Relaxed</h3>
-            <p>49,99 €</p>
+
+        <div className="hero-content">
+          <h1 className="hero-title">Tienda Virtual</h1>
+          <p className="hero-subtitle">Descubre nuevos productos y encuentra tu estilo</p>
+
+          <div className="hero-buttons">
+            <Link href="/hombre" className="hero-btn">Hombre</Link>
+            <Link href="/mujer" className="hero-btn">Mujer</Link>
+            <Link href="/carrito" className="hero-btn cart-btn">Carrito 🛒</Link>
           </div>
         </div>
+
       </section>
+
     </main>
   )
 }
